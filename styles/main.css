@@ -1,13 +1,21 @@
-.criminalList {
+.criminalList, .officerList{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
+	align-content: space-between;
 }
-.criminals {
-	border: 1px dotted rgba(128, 128, 128, 0.726);
+.criminals, .officers {
 	margin: 20px;
-	padding: 15px;
+	padding: 10px;
 	flex-basis: 20%;
+}
+.criminals{
+	border: 1px dotted rgb(252, 109, 14);
+
+}
+.officers{
+	border: 1px dotted rgb(1, 34, 180);
+
 }
 
 .criminalName {
@@ -16,4 +24,5 @@
 }
 .criminalInfo {
 	margin: 0;
-}
+}	
+
