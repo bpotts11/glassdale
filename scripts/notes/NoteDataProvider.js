@@ -1,19 +1,19 @@
-const eventHub = document.querySelector(".container")
+// const eventHub = document.querySelector(".container")
 
-const dispatchStateChangeEvent = () => {
-    const noteStateChangedEvent = new CustomEvent("noteStateChanged")
+// const dispatchStateChangeEvent = () => {
+//     const noteStateChangedEvent = new CustomEvent("noteStateChanged")
 
-    eventHub.dispatchEvent(noteStateChangedEvent)
-}
+//     eventHub.dispatchEvent(noteStateChangedEvent)
+// }
 
-const getNotes = () => {
-    return fetch('http://localhost:8088/notes')
-        .then(response => response.json())
-        .then(parsedNotes => {
-            notes = parsedNotes
-        })
+// const getNotes = () => {
+//     return fetch('http://localhost:8088/notes')
+//         .then(response => response.json())
+//         .then(parsedNotes => {
+//             notes = parsedNotes
+//         })
 
-}
+// }
 
 export const saveNote = note => {
     return fetch('http://localhost:8088/notes', {
@@ -28,23 +28,25 @@ export const saveNote = note => {
 }
 
 
-// Handle browser-generated click event in component
-eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === "saveNote") {
+// const eventHub =document.querySelector (".container")
 
-        // Make a new object representation of a note
-        const newNote = {
-            // Key/value pairs here
-            date: document.querySelector("#noteForm--date").value,
-            suspect: document.querySelector("#noteForm--suspect").value,
-            text: document.querySelector("#noteForm--text").value,
-        }
+// // Handle browser-generated click event in component
+// eventHub.addEventListener("click", clickEvent => {
+//     if (clickEvent.target.id === "saveNote") {
 
-        // Change API state and application state
-        saveNote(newNote)
-    }
-})
+//         // Make a new object representation of a note
+//         const newNote = {
+//             // Key/value pairs here
+//             date: document.querySelector("#noteForm--date").value,
+//             suspect: document.querySelector("#noteForm--suspect").value,
+//             text: document.querySelector("#noteForm--text").value,
+//         }
 
-const NoteForm = () => {
-    // rest of the code here
-}
+//         // Change API state and application state
+//         saveNote(newNote)
+//     }
+// })
+
+// const NoteForm = () => {
+//     // rest of the code here
+// }
