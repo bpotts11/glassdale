@@ -1,4 +1,4 @@
-import { AssociatesList } from "./AssociatesList.js"
+import "./AssociatesList.js"
 
 export const ShowAssociatesButton = (criminalObj) => {
     return `

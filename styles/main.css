@@ -1,4 +1,6 @@
-
+@import './associates.css';
+@import './modal.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;900&display=swap');
 
 .criminalList, .officerList{
 	display: flex;
@@ -6,19 +8,20 @@
 	justify-content: space-around;
 	align-content: space-between;
 }
-.criminals, .officers {
+.criminals, .officers, .note{
 	margin: 20px;
 	padding: 10px;
 	flex-basis: 20%;
 }
 .criminals{
 	border: 1px dotted rgb(252, 109, 14);
-
 }
 .officers{
 	border: 1px dotted rgb(1, 34, 180);
-
 }
+.note {
+	border: 1px dotted orchid;
+  }
 
 .criminalName {
 	font-weight: bold;
@@ -27,4 +30,11 @@
 .criminalInfo {
 	margin: 0;
 }	
-
+.notesAside {
+	display: flex;
+	flex-direction: column;
+  }
+  
+  .caseDataContainer {
+	display: flex;
+  }
