@@ -1,3 +1,5 @@
+import { ShowAssociatesButton } from "../associates/ShowAssociatesButton.js"
+
 export const Criminal = (criminalObj) => {
     return `
     <section class="criminals">
@@ -6,6 +8,7 @@ export const Criminal = (criminalObj) => {
         <p class="criminalInfo">Crime: ${criminalObj.conviction}</p>
         <p class="criminalInfo">Term start: ${new Date(criminalObj.incarceration.start).toLocaleDateString('en-US')}</p>
         <p class="criminalInfo"> Term end:${new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')}</p>
+        ${ShowAssociatesButton(criminalObj)}
     </section>
         `
 }
