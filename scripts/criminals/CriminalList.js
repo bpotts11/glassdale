@@ -3,7 +3,7 @@ import { Criminal } from "./Criminal.js"
 import { useConvictions } from "../convictions/ConvictionProvider.js";
 
 const eventHub = document.querySelector(".container")
-const criminalsContainer = document.querySelector(".criminalsContainer")
+const criminalsContainer = document.querySelector(".infoContainer")
 
 // Render ALL criminals initally
 export const CriminalList = () => {
@@ -66,3 +66,9 @@ eventHub.addEventListener("officerSelected", event => {
   )
   renderToDom(filteredCriminalsArray)
 })
+
+eventHub.addEventListener("WitnessClicked", () => {
+  criminalsContainer.innerHTML = ""
+})
+
+eventHub.addEventListener("CriminalsClicked", () => CriminalList())
