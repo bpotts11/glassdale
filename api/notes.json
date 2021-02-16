@@ -2,10 +2,17 @@
   "notes": [
     {
       "criminalId": 1,
-      "text": "sus",
-      "author": "me",
+      "text": "seems sus",
+      "author": "britt",
       "date": "2021-02-16",
       "id": 1
+    },
+    {
+      "criminalId": 8,
+      "text": "hmmm",
+      "author": "britt",
+      "date": "2021-02-17",
+      "id": 2
     }
   ]
 }

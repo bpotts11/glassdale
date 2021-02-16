@@ -14,10 +14,30 @@ eventHub.addEventListener("showNotesClicked", customEvent => {
     NoteList()
 })
 
-const render = (noteArray) => {
-    const allNotesConvertedToStrings = noteArray.map(noteObject => {
+eventHub.addEventListener("noteStateChanged", event => {
+    if (contentTarget.innerHTML !== "") {
+        NoteList()
+    }
+})
+
+// Standard list function you're used to writing by now. BUT, don't call this in main.js! Why not?
+export const NoteList = () => {
+    getNotes()
+        .then(getCriminals)
+        .then(() => {
+            allNotes = useNotes()
+            allCriminals = useCriminals()
+            render()
+        })
+}
+
+const render = () => {
+    const allNotesConvertedToStrings = allNotes.map(noteObject => {
         const relatedCriminalObject = allCriminals.find(criminal => criminal.id === noteObject.criminalId)
         return NoteHTMLConverter(noteObject, relatedCriminalObject)
+        // debugger
+
+        // convert the notes objects to HTML with NoteHTMLConverter
     }).join("")
 
     contentTarget.innerHTML = `
@@ -27,20 +47,3 @@ const render = (noteArray) => {
         </section>
     `
 }
-
-// Standard list function you're used to writing by now. BUT, don't call this in main.js! Why not?
-export const NoteList = () => {
-    getNotes()
-        .then(getCriminals)
-        .then(() => {
-            allNotes = useNotes()
-            allCriminals = useCriminals()
-            render(allNotes)
-        })
-}
-
-eventHub.addEventListener("noteStateChanged", event => {
-    if (contentTarget.innerHTML !== "") {
-        NoteList()
-    }
-})

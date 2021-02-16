@@ -7,12 +7,13 @@ const eventHub = document.querySelector(".container")
 export const NoteForm = () => {
     getCriminals()
         .then(() => {
-            const arrayofCriminals = useCriminals()
-            render(arrayofCriminals)
+            const arrayOfCriminals = useCriminals()
+            render(arrayOfCriminals)
         })
 }
 
 const render = (criminalsArray) => {
+    // debugger
     contentTarget.innerHTML = `
         <div class="date">
             <label for="note-date">Date</label>
@@ -40,6 +41,7 @@ const render = (criminalsArray) => {
             <button id="saveNote">Save Note</button>
     `
 }
+
 // Handle browser-generated click event in component
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
@@ -47,7 +49,7 @@ eventHub.addEventListener("click", clickEvent => {
         const text = document.querySelector("#note-text").value
         const author = document.querySelector("#note-author").value
         const date = document.querySelector("#note-date").value
-
+        // debugger
         // Make a new object representation of a note
         const newNote = {
             // Key/value pairs here
@@ -56,7 +58,7 @@ eventHub.addEventListener("click", clickEvent => {
             "author": author,
             "date": date,
         }
-        debugger
+        // debugger
         // Change API state and application state
         saveNote(newNote)
     }
