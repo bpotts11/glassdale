@@ -32,3 +32,7 @@ const renderToDom = (witnessCollection) => {
 eventHub.addEventListener("WitnessClicked", () => {
     WitnessList()
 })
+
+eventHub.addEventListener("CriminalsClicked", () => {
+    witnessContainer.innerHTML = ""
+})
