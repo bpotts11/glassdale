@@ -6,22 +6,25 @@ const eventHub = document.querySelector(".container")
 const render = () => {
     contentTarget.innerHTML = `
         <div class="date">
-            <label for="noteForm--date">Date</label>
+            <label for="note-date">Date</label>
             <input type="date" id="note-date">
         </div>
         
         <div class="suspect">
-            <label for="noteForm--suspect">Suspect:</label>
-            <input type="text" id="note-suspect"></input>
+            <label for="note-suspect">Suspect:</label>
+            <select id="note-suspect">
+                <option value="0">Please select a criminal...</option>
+                ${c}<option value="${criminal.id}">${criminal.name}</option>
+            </select>
         </div>
         
         <div class="text">
-            <label for="noteForm--text">Note:</label>
+            <label for="note-text">Note:</label>
             <input type="text" id="note-text"></input>
         </div>
 
         <div class="author">
-            <label for="noteForm--author">Author:</label>
+            <label for="note-author">Author:</label>
             <input type="text" id="note-author"></input>
         </div>
             
