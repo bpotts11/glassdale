@@ -20,4 +20,3 @@ eventHub.addEventListener("click", event => {
         eventHub.dispatchEvent(customEvent)
     }
 })
-
