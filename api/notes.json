@@ -1,25 +1,11 @@
 {
   "notes": [
     {
-      "date": "2021-02-01",
-      "suspect": "Madelyn",
-      "text": "Test Note",
-      "author": "Me",
+      "criminalId": 1,
+      "text": "sus",
+      "author": "me",
+      "date": "2021-02-16",
       "id": 1
-    },
-    {
-      "date": "2021-02-01",
-      "suspect": "Test 2",
-      "text": "Test 2",
-      "author": "me",
-      "id": 2
-    },
-    {
-      "date": "2021-02-02",
-      "suspect": "test 3",
-      "text": "test 3",
-      "author": "me",
-      "id": 3
     }
   ]
 }

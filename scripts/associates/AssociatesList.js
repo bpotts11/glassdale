@@ -4,20 +4,20 @@ const contentContainer = document.querySelector(".associatesContainer")
 
 export const AssociatesList = (criminalObj) => {
     const HTMLRepresentation = `
-        <h1>Known associates for ${criminalObj.name}</h1>
-        ${criminalObj.known_associates.map(associate => {
-        return `
-        <div id="alibi__modal" class="modal--parent">
+    <div id="alibi__modal" class="modal--parent">
         <div class="modal--content">
-            <section class="associate__container">
-                <div class="associate__name">${associate.name}</div>
-                <div class="associate__alibi">Alibi:${associate.alibi}</div>
-                </section>
-        </div >
-        </div >`
+            <h1>Known associates for ${criminalObj.name}</h1>
+            ${criminalObj.known_associates.map(associate => {
+        return `
+                    <section class="associate__container">
+                        <div class="associate__name">${associate.name}</div>
+                        <div class="associate__alibi">Alibi:${associate.alibi}</div>
+                    </section>`
     }).join("")}
-    
-    <button id="modal--close">Close Modal</button>`
+            <button id="modal--close">Close Modal</button>
+        </div>
+    </div>
+    `
 
     contentContainer.innerHTML = HTMLRepresentation
 }
