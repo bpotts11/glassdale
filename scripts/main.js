@@ -4,7 +4,9 @@ import { OfficerList } from "./officers/OfficerList.js";
 import { OfficerSelect } from "./officers/OfficerSelect.js";
 import { NoteForm } from "./notes/NoteForm.js";
 import { ShowNoteButton } from "./notes/ShowNotesButton.js";
-import "./notes/NoteList.js"
+import "./notes/NoteList.js";
+import { ShowWitnessButton } from "./witnesses/ShowWitnessButton.js";
+import "./witnesses/WitnessList.js"
 
 
 CriminalList()
@@ -13,4 +15,4 @@ OfficerList()
 OfficerSelect()
 NoteForm()
 ShowNoteButton()
-
+ShowWitnessButton()
