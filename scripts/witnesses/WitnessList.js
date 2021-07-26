@@ -36,3 +36,7 @@ eventHub.addEventListener("WitnessClicked", () => {
 eventHub.addEventListener("CriminalsClicked", () => {
     witnessContainer.innerHTML = ""
 })
+
+eventHub.addEventListener("FacilityClicked", () => {
+    witnessContainer.innerHTML = ""
+})

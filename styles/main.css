@@ -1,13 +1,13 @@
 @import './modal.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;900&display=swap');
 
-.criminalList, .officerList{
+.criminalList, .officerList, .facilitiesList{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-content: space-between;
 }
-.criminals, .officers, .note{
+.criminals, .officers, .note, .facilities{
 	margin: 10px;
 	padding: 10px;
 	flex-basis: 15%;
@@ -21,10 +21,12 @@
 .note {
 	border: 1px dotted orchid;
   }
-  .witnessCard {
+.witnessCard {
 	  border: 1px dotted greenyellow;
   }
-
+.facilities{
+	border: 1px dotted purple;
+  }
 .criminalName {
 	font-weight: bold;
 	margin: 0 0 8px 0;
