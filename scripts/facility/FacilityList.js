@@ -47,3 +47,7 @@ eventHub.addEventListener("WitnessesClicked", () => {
 eventHub.addEventListener("CriminalsClicked", () => {
     facilityContainer.innerHTML = ""
 })
+
+eventHub.addEventListener("OfficersClicked", () => {
+    facilityContainer.innerHTML = ""
+})

@@ -36,7 +36,7 @@ const render = (criminalCollection, crimFacCollection, facilityCollection) => {
   }
 
   criminalsContainer.innerHTML = `
-  <h3>Criminals</h3>
+  <h2>Criminals</h2>
   <section class="criminalList">
     ${criminalsHTMLRepresentations}
   </section>
@@ -86,6 +86,12 @@ eventHub.addEventListener("officerSelected", event => {
 })
 
 eventHub.addEventListener("WitnessClicked", () => {
+  criminalsContainer.innerHTML = ""
+})
+eventHub.addEventListener("OfficersClicked", () => {
+  criminalsContainer.innerHTML = ""
+})
+eventHub.addEventListener("FacilityClicked", () => {
   criminalsContainer.innerHTML = ""
 })
 
