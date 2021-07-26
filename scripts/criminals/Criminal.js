@@ -1,14 +1,25 @@
 import { ShowAssociatesButton } from "../associates/ShowAssociatesButton.js"
 
-export const Criminal = (criminalObj) => {
+export const Criminal = (criminalObject, facilities) => {
     return `
     <section class="criminals">
-        <h4 class="criminalName">${criminalObj.name}</h4>
-        <p class="criminalInfo">Age: ${criminalObj.age}</p>
-        <p class="criminalInfo">Crime: ${criminalObj.conviction}</p>
-        <p class="criminalInfo">Term start: ${new Date(criminalObj.incarceration.start).toLocaleDateString('en-US')}</p>
-        <p class="criminalInfo"> Term end:${new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')}</p>
-        ${ShowAssociatesButton(criminalObj)}
+        <h2 class="criminalName">${criminalObject.name}</h2>
+        <div class="criminal__details">
+            <p>Convicted for ${criminalObject.conviction}</p>
+            <p>Arrested by ${criminalObject.arrestingOfficer}</p>
+            <p>Incarcerated between:
+                ${new Date(criminalObject.incarceration.start).toLocaleDateString()} and
+                ${new Date(criminalObject.incarceration.end).toLocaleDateString()}
+            </p>
+            <p>Age: ${criminalObject.age}</p>
+            <div>
+                <h2>Facilities</h2>
+                <ul>
+                    ${facilities.map(f => `<li>${f.facilityName}</li>`).join("")}
+                </ul>
+            </div>
+            <button id="associates--${criminalObject.id}">Show Associates</button>
+        </div>
     </section>
-        `
+    `
 }
