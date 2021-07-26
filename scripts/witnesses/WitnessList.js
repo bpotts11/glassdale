@@ -22,8 +22,8 @@ const renderToDom = (witnessCollection) => {
     }
 
     witnessContainer.innerHTML = `
-    <h3>Witness Statements</h3>
-    <section class="witness">
+    <h2>Witness Statements</h2>
+    <section class="witnessList">
         ${witnessHTMLRepresentation}
     </section>
     `
@@ -34,5 +34,13 @@ eventHub.addEventListener("WitnessClicked", () => {
 })
 
 eventHub.addEventListener("CriminalsClicked", () => {
+    witnessContainer.innerHTML = ""
+})
+
+eventHub.addEventListener("FacilityClicked", () => {
+    witnessContainer.innerHTML = ""
+})
+
+eventHub.addEventListener("OfficersClicked", () => {
     witnessContainer.innerHTML = ""
 })

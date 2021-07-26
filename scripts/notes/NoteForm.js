@@ -15,30 +15,32 @@ export const NoteForm = () => {
 const render = (criminalsArray) => {
     // debugger
     contentTarget.innerHTML = `
-        <div class="date">
+    <form  action="" class="noteForm">
+        <fieldset class="date">
             <label for="note-date">Date</label>
             <input type="date" id="note-date">
-        </div>
+        </fieldset>
         
-        <div class="suspect">
+        <fieldset class="suspect">
             <label for="note-criminalId">Suspect:</label>
             <select id="note-criminalId">
                 <option value="0">Please select a criminal...</option>
               ${criminalsArray.map(criminal => `<option value="${criminal.id}">${criminal.name}</option>`).join("")}
             </select>
-        </div>
+        </fieldset>
         
-        <div class="text">
+        <fieldset class="text">
             <label for="note-text">Note:</label>
             <input type="text" id="note-text"></input>
-        </div>
+        </fieldset>
 
-        <div class="author">
+        <fieldset class="author">
             <label for="note-author">Author:</label>
             <input type="text" id="note-author"></input>
-        </div>
+        </fieldset>
             
             <button id="saveNote">Save Note</button>
+            </form>
     `
 }
 

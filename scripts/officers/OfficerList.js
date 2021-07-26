@@ -1,6 +1,7 @@
 import { Officer } from "./Officer.js";
 import { getOfficers, useOfficers } from "./OfficerProvider.js";
 
+const eventHub = document.querySelector(".container")
 const officersContainer = document.querySelector(".officersContainer")
 
 export const OfficerList = () => {
@@ -17,10 +18,12 @@ export const OfficerList = () => {
             }
 
             officersContainer.innerHTML = `
-        <h3>Glassdale Officers</h3>
+        <h2>Glassdale Officers</h2>
         <section class=officerList>
             ${officersHTMLRepresentations}
-        </seciotn>
+        </section>
         `
         })
 }
+
+eventHub.addEventListener("OfficersClicked", () => OfficerList())

@@ -1,7 +1,7 @@
 export const Officer = (officerObj) => {
     return `
-    <p class="officers">
-        ${officerObj.name}
-    </p>
+    <section class="officers">
+        <h3 class="officerName">${officerObj.name}</h3>
+    </section>
 `
 }

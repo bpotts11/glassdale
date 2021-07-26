@@ -1,8 +1,8 @@
 import "./AssociatesList.js"
 
-export const ShowAssociatesButton = (criminalObj) => {
+export const ShowAssociatesButton = (criminalObject) => {
     return `
-        <button id="associates--${criminalObj.id}">Associate Alibis</button>
+        <button id="associates--${criminalObject.id}">Associate Alibis</button>
     `
 }
 
