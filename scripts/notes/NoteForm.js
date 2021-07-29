@@ -1,8 +1,8 @@
 import { saveNote } from "./NoteProvider.js"
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js"
 
-const contentTarget = document.querySelector(".noteFormContainer")
-const eventHub = document.querySelector(".container")
+const noteFormContainer = document.querySelector(".noteFormContainer")
+const eventHub = document.querySelector(".container-fluid")
 
 export const NoteForm = () => {
     getCriminals()
@@ -13,34 +13,34 @@ export const NoteForm = () => {
 }
 
 const render = (criminalsArray) => {
-    // debugger
-    contentTarget.innerHTML = `
+    noteFormContainer.innerHTML = `
+    <h2>Notes:</h2>
     <form  action="" class="noteForm">
-        <fieldset class="date">
+        <div class="form-group">
             <label for="note-date">Date</label>
-            <input type="date" id="note-date">
-        </fieldset>
+            <input type="date" id="note-date" class="form-control">
+        </div>
         
-        <fieldset class="suspect">
+        <div class="form-group">
             <label for="note-criminalId">Suspect:</label>
-            <select id="note-criminalId">
+            <select id="note-criminalId" class="form-control">
                 <option value="0">Please select a criminal...</option>
               ${criminalsArray.map(criminal => `<option value="${criminal.id}">${criminal.name}</option>`).join("")}
             </select>
-        </fieldset>
+        </div>
         
-        <fieldset class="text">
+        <div class="form-group">
             <label for="note-text">Note:</label>
-            <input type="text" id="note-text"></input>
-        </fieldset>
+            <input type="text" id="note-text" class="form-control"></input>
+        </div>
 
-        <fieldset class="author">
+        <div class="form-group">
             <label for="note-author">Author:</label>
-            <input type="text" id="note-author"></input>
-        </fieldset>
+            <input type="text" id="note-author" class="form-control"></input>
+        </div>
             
-            <button id="saveNote">Save Note</button>
-            </form>
+            <button id="saveNote" class="btn btn-outline-dark">Save Note</button>
+    </form>
     `
 }
 

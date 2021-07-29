@@ -1,8 +1,8 @@
 import { Officer } from "./Officer.js";
 import { getOfficers, useOfficers } from "./OfficerProvider.js";
 
-const eventHub = document.querySelector(".container")
-const officersContainer = document.querySelector(".officersContainer")
+const eventHub = document.querySelector(".container-fluid")
+const officersContainer = document.querySelector(".infoContainer")
 
 export const OfficerList = () => {
 
@@ -19,7 +19,7 @@ export const OfficerList = () => {
 
             officersContainer.innerHTML = `
         <h2>Glassdale Officers</h2>
-        <section class=officerList>
+        <section class="officerList row">
             ${officersHTMLRepresentations}
         </section>
         `
@@ -27,3 +27,16 @@ export const OfficerList = () => {
 }
 
 eventHub.addEventListener("OfficersClicked", () => OfficerList())
+
+eventHub.addEventListener("CriminalsClicked", () => {
+    officersContainer.innerHTML = ""
+})
+eventHub.addEventListener("FacilityClicked", () => {
+    officersContainer.innerHTML = ""
+})
+eventHub.addEventListener("WitnessClicked", () => {
+    officersContainer.innerHTML = ""
+})
+eventHub.addEventListener("showNotesClicked", () => {
+    officersContainer.innerHTML = ""
+})

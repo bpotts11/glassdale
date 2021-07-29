@@ -1,4 +1,4 @@
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container-fluid")
 
 let notes = []
 

@@ -2,11 +2,13 @@ const contentTarget = document.querySelector(".buttonContainer")
 
 export const ShowWitnessButton = () => {
     contentTarget.innerHTML += `
-    <button id='witnessButton'>Witness Statements</button>
+    <li class="nav-item">
+        <a class="nav-link" id='witnessButton'>Witness Statements</a>
+    </li>
     `
 }
 
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container-fluid")
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "witnessButton") {

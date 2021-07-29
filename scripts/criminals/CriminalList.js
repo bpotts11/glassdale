@@ -4,7 +4,7 @@ import { useConvictions } from "../convictions/ConvictionProvider.js";
 import { getCriminalFacilities, useCriminalFacilities } from "../facility/CriminalFacilityProvider.js";
 import { getFacilities, useFacilities } from "../facility/FacilityProvider.js";
 
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container-fluid")
 const criminalsContainer = document.querySelector(".infoContainer")
 
 export const CriminalList = () => {
@@ -37,7 +37,8 @@ const render = (criminalCollection, crimFacCollection, facilityCollection) => {
 
   criminalsContainer.innerHTML = `
   <h2>Criminals</h2>
-  <section class="criminalList">
+  <div class="filter filters__crime"></div>
+  <section class="criminalList row">
     ${criminalsHTMLRepresentations}
   </section>
   `
@@ -85,6 +86,8 @@ eventHub.addEventListener("officerSelected", event => {
   render(filteredCriminalsArray, crimFacArray, facilitiesArray)
 })
 
+eventHub.addEventListener("CriminalsClicked", () => CriminalList())
+
 eventHub.addEventListener("WitnessClicked", () => {
   criminalsContainer.innerHTML = ""
 })
@@ -94,5 +97,6 @@ eventHub.addEventListener("OfficersClicked", () => {
 eventHub.addEventListener("FacilityClicked", () => {
   criminalsContainer.innerHTML = ""
 })
-
-eventHub.addEventListener("CriminalsClicked", () => CriminalList())
+eventHub.addEventListener("showNotesClicked", () => {
+  criminalsContainer.innerHTML = ""
+})

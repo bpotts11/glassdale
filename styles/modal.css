@@ -10,6 +10,7 @@
 .modal--content {
     background-color: rgb(175, 184, 216);
     border: 1px solid black;
+    border-radius: .25rem;
     width: 80%;
     max-width: 700px;
     position: absolute;
@@ -24,6 +25,7 @@
     display: flex;
     flex-wrap: wrap;
     border: 1px solid gray;
+    border-radius: .25rem;
     background-color: rgb(255, 255, 255);
     padding: .5em;
     margin: .5em;

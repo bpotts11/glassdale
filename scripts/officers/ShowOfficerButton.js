@@ -1,9 +1,11 @@
 const contentTarget = document.querySelector(".buttonContainer")
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container-fluid")
 
 export const ShowOfficerButton = () => {
     contentTarget.innerHTML += `
-    <button id='officerButton'>Officers</button>
+    <li class="nav-item">
+        <a class="nav-link" id='officerButton'>Officers</a>
+    </li>
     `
 }
 

@@ -3,22 +3,11 @@ import { NoteHTMLConverter } from "./Note.js";
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js"
 
 // Query the DOM for the element that your notes will be added to 
-const contentTarget = document.querySelector(".notesContainer")
-// Define ye olde Evente Hubbe
-const eventHub = document.querySelector(".container")
+const noteContainer = document.querySelector(".infoContainer")
+const eventHub = document.querySelector(".container-fluid")
 
 let allNotes = []
 let allCriminals = []
-
-eventHub.addEventListener("showNotesClicked", customEvent => {
-    NoteList()
-})
-
-eventHub.addEventListener("noteStateChanged", event => {
-    if (contentTarget.innerHTML !== "") {
-        NoteList()
-    }
-})
 
 // Standard list function you're used to writing by now. BUT, don't call this in main.js! Why not?
 export const NoteList = () => {
@@ -40,10 +29,32 @@ const render = () => {
         // convert the notes objects to HTML with NoteHTMLConverter
     }).join("")
 
-    contentTarget.innerHTML = `
-        <h3>Case Notes</h3>
-        <section class="notesList">
+    noteContainer.innerHTML = `
+        <h2>Case Notes</h2>
+        <section class="noteList row">
             ${allNotesConvertedToStrings}
         </section>
     `
 }
+
+
+eventHub.addEventListener("showNotesClicked", () => NoteList())
+
+eventHub.addEventListener("noteStateChanged", () => {
+    if (noteContainer.innerHTML !== "") {
+        NoteList()
+    }
+})
+
+eventHub.addEventListener("WitnessClicked", () => {
+    noteContainer.innerHTML = ""
+})
+eventHub.addEventListener("OfficersClicked", () => {
+    noteContainer.innerHTML = ""
+})
+eventHub.addEventListener("FacilityClicked", () => {
+    noteContainer.innerHTML = ""
+})
+eventHub.addEventListener("CriminalsClicked", () => {
+    noteContainer.innerHTML = ""
+})
