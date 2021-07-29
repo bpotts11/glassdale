@@ -3,7 +3,7 @@ import { Facility } from "./Facility.js";
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js";
 import { getCriminalFacilities, useCriminalFacilities } from "./CriminalFacilityProvider.js";
 
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container-fluid")
 const facilityContainer = document.querySelector(".infoContainer")
 
 export const FacilityList = () => {
@@ -22,7 +22,7 @@ export const FacilityList = () => {
 const render = (criminals, facilities, crimFac) => {
     facilityContainer.innerHTML = `
     <h2>Facilities</h2>
-    <section class="facilitiesList">
+    <section class="facilitiesList row">
     ${facilities.map(facility => {
         const criminalRelationshipsForThisFacility = crimFac.filter(cf => cf.facilityId === facility.id)
 
@@ -39,15 +39,15 @@ const render = (criminals, facilities, crimFac) => {
 eventHub.addEventListener("FacilityClicked", () => {
     FacilityList()
 })
-
 eventHub.addEventListener("WitnessesClicked", () => {
     facilityContainer.innerHTML = ""
 })
-
 eventHub.addEventListener("CriminalsClicked", () => {
     facilityContainer.innerHTML = ""
 })
-
 eventHub.addEventListener("OfficersClicked", () => {
+    facilityContainer.innerHTML = ""
+})
+eventHub.addEventListener("showNotesClicked", () => {
     facilityContainer.innerHTML = ""
 })

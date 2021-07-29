@@ -1,10 +1,12 @@
 const contentTarget = document.querySelector(".buttonContainer")
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container-fluid")
 
 
 export const DisplayFacilitiesButton = () => {
     contentTarget.innerHTML += `
-    <button id='facilityButton'>Facilities</button>
+    <li class="nav-item">
+        <a class="nav-link" id='facilityButton'>Facilities</a>
+    </li>
     `
 }
 

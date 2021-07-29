@@ -2,24 +2,17 @@
   "notes": [
     {
       "criminalId": 1,
-      "text": "seems sus",
-      "author": "britt",
-      "date": "2021-02-16",
+      "text": "All but one. Nellie Freemon ran her antique and oddities store, but never had the sense to get additional, commercial crime insurance. Of course, her business was only extorted once.\" She lowers her voice and says gently, \"She never did have much revenue, so I guess it just wasn't worth their time to extort what she couldn't make.",
+      "author": "Maggie",
+      "date": "2021-07-29",
       "id": 1
     },
     {
-      "criminalId": 8,
-      "text": "hmmm",
-      "author": "britt",
-      "date": "2021-02-17",
+      "criminalId": 1,
+      "text": "You've been doing this a while, and you know as well as I do that people who commit crimes are, more often than not, the ones who commit it again in the future.",
+      "author": "Maggie",
+      "date": "2021-07-30",
       "id": 2
-    },
-    {
-      "criminalId": 7,
-      "text": "test",
-      "author": "me",
-      "date": "2021-07-26",
-      "id": 3
     }
   ]
 }

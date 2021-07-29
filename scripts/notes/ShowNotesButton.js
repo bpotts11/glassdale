@@ -1,5 +1,5 @@
-const contentTarget = document.querySelector(".noteListButton")
-const eventHub = document.querySelector(".container")
+const contentTarget = document.querySelector(".buttonContainer")
+const eventHub = document.querySelector(".container-fluid")
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "showNotes") {
@@ -10,5 +10,9 @@ eventHub.addEventListener("click", clickEvent => {
 })
 
 export const ShowNoteButton = () => {
-    contentTarget.innerHTML = "<button id='showNotes'>Show Notes</button>"
+    contentTarget.innerHTML += `
+    <li class="nav-item">
+        <a class="nav-link" id='showNotes'>Show Notes</a>
+    </li>
+    `
 }

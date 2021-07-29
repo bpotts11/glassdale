@@ -1,7 +1,7 @@
 import { getWitness, useWitnesses } from "./WitnessProvider.js";
 import { Witness } from "./Witness.js";
 
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container-fluid")
 const witnessContainer = document.querySelector(".infoContainer")
 
 const WitnessList = () => {
@@ -23,7 +23,7 @@ const renderToDom = (witnessCollection) => {
 
     witnessContainer.innerHTML = `
     <h2>Witness Statements</h2>
-    <section class="witnessList">
+    <section class="witnessList row">
         ${witnessHTMLRepresentation}
     </section>
     `
@@ -32,15 +32,15 @@ const renderToDom = (witnessCollection) => {
 eventHub.addEventListener("WitnessClicked", () => {
     WitnessList()
 })
-
 eventHub.addEventListener("CriminalsClicked", () => {
     witnessContainer.innerHTML = ""
 })
-
 eventHub.addEventListener("FacilityClicked", () => {
     witnessContainer.innerHTML = ""
 })
-
 eventHub.addEventListener("OfficersClicked", () => {
+    witnessContainer.innerHTML = ""
+})
+eventHub.addEventListener("showNotesClicked", () => {
     witnessContainer.innerHTML = ""
 })

@@ -2,11 +2,13 @@ const contentTarget = document.querySelector(".buttonContainer")
 
 export const ShowCriminalButton = () => {
     contentTarget.innerHTML += `
-    <button id='criminalButton'>Criminals</button>
+    <li class="nav-item">
+        <a class="nav-link" id='criminalButton'>Criminals</a>
+    </li>
     `
 }
 
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container-fluid")
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "criminalButton") {

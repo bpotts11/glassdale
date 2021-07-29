@@ -1,6 +1,6 @@
 import { getConvictions, useConvictions } from "./ConvictionProvider.js";
 
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container-fluid")
 const contentTarget = document.querySelector(".filters__crime")
 
 // On the event hub, listen for a "change" event.
@@ -30,8 +30,8 @@ export const ConvictionSelect = () => {
 
 const render = convictionsCollection => {
     contentTarget.innerHTML = `
-    <select class="dropdown" id="crimeSelect">
-        <option value="0">Please select a crime...</option>
+    <select id="crimeSelect" class="form-control">
+        <option value="0">Conviction</option>
             ${convictionsCollection.map(conviction => `<option value="${conviction.id}">${conviction.name}</option>`).join("")
         }
     </select >

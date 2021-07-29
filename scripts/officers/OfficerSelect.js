@@ -1,6 +1,6 @@
 import { getOfficers, useOfficers } from "./OfficerProvider.js"
 
-const eventHub = document.querySelector(".container")
+const eventHub = document.querySelector(".container-fluid")
 const contentTarget = document.querySelector(".filters__officer")
 
 
@@ -31,8 +31,8 @@ export const OfficerSelect = () => {
 
 const render = officerCollection => {
     contentTarget.innerHTML = `
-    <select class="dropdown" id="officerSelect">
-        <option value="0">Please select an officer...</option>
+    <select id="officerSelect" class="form-control">
+        <option value="0">Officer</option>
             ${officerCollection.map(officer => `<option value="${officer.name}">${officer.name}</option>`).join("")
         }
     </select >
